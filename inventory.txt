@@ -1,0 +1,7 @@
+001,Drawing Paper 12'x 18',18.0,200,Main Bookstore,DRAW10W
+002,Drawing Paper 12'x 9',10.0,300,Main Bookstore,DRAW10W
+003,Drawing Paper Case,50.0,90,Main Bookstore,DRAW10W
+004,PE Shirt Uniform (Small),450.0,0,Main Bookstore,PATHFIT
+005,PE Pants Uniform (Medium),500.0,0,Main Bookstore,PATHFIT
+006,Mapua Yellow Pad (100s),65.0,120,Main Bookstore,GEN
+007,Booklet,80.0,15,Main Bookstore,DRAW10W
