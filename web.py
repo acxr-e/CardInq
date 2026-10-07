@@ -235,7 +235,7 @@ def main():
     # --- MODULE 1: CATALOG VIEW ---
     if menu_choice == "Inventory Stock Catalog":
         st.header("📋 Full Inventory Stock Catalog")
-        st.caption("Real-time Availability of All Bookstore Supplies.")
+        st.caption("Real-time Availability and Details of All Bookstore Supplies.")
 
         table_data = []
         for item in inventory.values():
@@ -261,7 +261,7 @@ def main():
     # --- MODULE 2: SEARCH INQUIRY ---
     elif menu_choice == "Search Item Availability":
         st.header("🔍 Quick Item Availability Inquiry")
-        st.caption("Search by Item ID, Item Description, or Course Tag).")
+        st.caption("Search by Item ID, Item Description, or Course Tag.")
 
         search_query = st.text_input("Search catalog:", placeholder="Enter item name, ID, or course code...").strip().lower()
 
@@ -292,7 +292,7 @@ def main():
     # --- MODULE 3: ADMIN SALES & STOCK UPDATE ---
     elif menu_choice == "Log Daily Sales/Update Stock (Admin Only)":
         st.header("⚙️ Admin Sales Logging & Stock Adjustment")
-        st.caption("Deduct daily sales quantities directly from the central database.")
+        st.caption("Deduct Daily End Sale Quantities Directly from the Central Database.")
 
         item_options = {f"[{item.item_id}] {item.name} (Current Stock: {item.stock})": item.item_id for item in inventory.values()}
         selected_display = st.selectbox("Select Item to Update:", list(item_options.keys()))
