@@ -99,7 +99,7 @@ def save_inventory(inventory):
 def main():
     st.set_page_config(
         page_title="CardInq | Mapúa Bookstore Portal",
-        page_icon="📚",
+        page_icon="🏦",
         layout="wide",
         initial_sidebar_state="expanded"
     )
@@ -129,18 +129,45 @@ def main():
                 font-size: 1.05rem;
             }
 
-            /* Sidebar Theme & Text Colors */
-            [data-testid="stSidebar"] {
-                background: linear-gradient(180deg, #800000 0%, #600000 100%) !important;
-            }
-            [data-testid="stSidebar"] * {
-                color: #FFFFFF !important;
-            }
-            [data-testid="stSidebar"] h1, 
-            [data-testid="stSidebar"] h2, 
-            [data-testid="stSidebar"] h3 {
-                color: #FFD700 !important;
-            }
+            /* Sidebar Parent Background */
+             section[data-testid="stSidebar"] {
+                 background: linear-gradient(135deg, #800000 0%, #B22222 100%) !important;
+                 border-right: 1px solid #EAEAEA;
+             }
+            
+             /* Default state for all sidebar text elements */
+             section[data-testid="stSidebar"] h1,
+             section[data-testid="stSidebar"] h2,
+             section[data-testid="stSidebar"] h3,
+             section[data-testid="stSidebar"] label,
+             section[data-testid="stSidebar"] span,
+             section[data-testid="stSidebar"] p { 
+                 color: #FFFFFF !important;
+             }
+            
+             /* Header Text Label above the options ("Select:") */
+             section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p {
+                 color: #F2A900 !important;
+                 font-weight: 600;
+             }
+            
+             /* ACTIVE State: Selected option text and radio button icon */
+             section[data-testid="stSidebar"] [data-checked="true"] {
+             background-color: #F2A900 !important;
+             border-color: #F2A900 !important;
+             }
+             section[data-testid="stSidebar"] [data-checked="true"] ~ div p {
+                 color: #F2A900 !important;
+                 font-weight: 700 !important;
+             }
+            
+             /* HOVER State: Unselected items on hover */
+             section[data-testid="stSidebar"] label:hover [data-checked="false"] {
+                 border-color: #F2A900 !important;
+             }
+             section[data-testid="stSidebar"] label:hover p {
+                 color: #F2A900 !important;
+             }
 
             /* Metric Card Custom Accent */
             [data-testid="stMetric"] {
@@ -191,7 +218,7 @@ def main():
     )
     
     st.sidebar.divider()
-    st.sidebar.caption("🏦 Mapúa University Bookstore System\n\nPowered by Python & Streamlit")
+    st.sidebar.caption("Mapúa University Bookstore System\n\nPowered by Python & Streamlit")
 
     # --- TOP METRIC OVERVIEW ---
     total_items = len(inventory)
@@ -208,7 +235,7 @@ def main():
     # --- MODULE 1: CATALOG VIEW ---
     if menu_choice == "Inventory Stock Catalog":
         st.header("📋 Full Inventory Stock Catalog")
-        st.caption("Real-time availability of all bookstore supplies.")
+        st.caption("Real-time Availability of All Bookstore Supplies.")
 
         table_data = []
         for item in inventory.values():
@@ -234,7 +261,7 @@ def main():
     # --- MODULE 2: SEARCH INQUIRY ---
     elif menu_choice == "Search Item Availability":
         st.header("🔍 Quick Item Availability Inquiry")
-        st.caption("Search by Item ID, Item Description, or Course Tag (e.g., DRAW10W, PATHFIT).")
+        st.caption("Search by Item ID, Item Description, or Course Tag).")
 
         search_query = st.text_input("Search catalog:", placeholder="Enter item name, ID, or course code...").strip().lower()
 
