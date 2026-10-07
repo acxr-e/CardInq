@@ -154,7 +154,7 @@ def main():
     
     while True:
         print("\n" + "="*48)
-        print("   Mapúa Bookstore Inventory & Inquiry System2   ")
+        print("   Mapúa Bookstore Inventory & Inquiry System   ")
         print("="*48)
         print("1. View Full Inventory Stock Catalog")
         print("2. Search Item Availability")
